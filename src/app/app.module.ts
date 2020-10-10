@@ -5,7 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
-import { GridModule, PagerModule } from '@syncfusion/ej2-angular-grids';
+import {
+  EditService,
+  GridModule,
+  PagerModule,
+  ToolbarService,
+} from '@syncfusion/ej2-angular-grids';
 import { ProductDataService } from './product-data.service';
 
 @NgModule({
@@ -18,7 +23,7 @@ import { ProductDataService } from './product-data.service';
     PagerModule,
     InMemoryWebApiModule.forRoot(ProductDataService),
   ],
-  providers: [],
+  providers: [EditService, ToolbarService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
